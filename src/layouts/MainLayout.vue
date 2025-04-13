@@ -12,7 +12,8 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Adelux
+        
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
@@ -28,7 +29,7 @@
         <q-item-label
           header
         >
-          Essential Links
+          <div class="text-h6">Menu</div>
         </q-item-label>
 
         <EssentialLink
@@ -51,47 +52,39 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: 'Home',
+    caption: 'Momentux',
+    icon: 'home',
+    link: '/#/welcome'
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    title: 'Profile',
+    caption: 'my-Profile',
+    icon: 'person',
+    link: '/#/profile'
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
+    title: 'Orders',
+    caption: 'Check your orders',
+    icon: 'shopping_cart',
+    link: '/#/order'
+  },
+  {
+    title: 'Help',
+    caption: 'Chat with us',
     icon: 'chat',
     link: 'https://chat.quasar.dev'
   },
   {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    title: 'Logout',
+    caption: 'Chana',
+    icon: 'logout',
+    link: '/#/login',
+    onClick: () => {
+      localStorage.removeItem('access_token')
+      window.location.href = '/#/login'
+    }
   },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
 ]
 
 const leftDrawerOpen = ref(false)
