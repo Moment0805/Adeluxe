@@ -78,7 +78,7 @@ const loading = ref(false)
 const handleRegister = async () => {
   loading.value = true
   try {
-     await axios.post('https://adeluxe-backend-mitd.onrender.com/auth/register', {
+     await axios.post('https://backend-adeluxe.onrender.com/auth/register', {
       email: email.value,
       password: password.value,
       phone: phone.value,
