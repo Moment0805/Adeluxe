@@ -1,7 +1,7 @@
 import { boot } from 'quasar/wrappers'
 import axios from 'axios'
 
-const api = axios.create({ baseURL: 'https://adeluxe-backend-mitd.onrender.com' }) // to be updated after being deployed
+const api = axios.create({ baseURL: 'https://backend-adeluxe.onrender.com' }) // to be updated after being deployed
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('access_token')
