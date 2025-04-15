@@ -7,16 +7,7 @@
           <div class="text-subtitle2 text-grey-7 q-mb-md">Sign up to get started</div>
   
           <q-form @submit.prevent="handleRegister" class="q-gutter-md">
-            <q-input
-              v-model="phone"
-              label="Mobile Number"
-              type="tel"
-              outlined
-              dense
-              rounded
-              required
-            />
-            <q-input
+             <q-input
               v-model="name"
               label="Username"
               type="text"
@@ -25,7 +16,7 @@
               rounded
               required
             />
-            <q-input
+             <q-input
               v-model="email"
               label="Email"
               type="email"
@@ -34,10 +25,19 @@
               rounded
               required
             />
-            <q-input
+             <q-input
               v-model="password"
               label="Password"
               type="password"
+              outlined
+              dense
+              rounded
+              required
+            />
+            <q-input
+              v-model="phone"
+              label="Mobile Number"
+              type="tel"
               outlined
               dense
               rounded
@@ -78,7 +78,7 @@ const loading = ref(false)
 const handleRegister = async () => {
   loading.value = true
   try {
-     await axios.post('https://adeluxe-backend-p20x.onrender.com/auth/register', {
+     await axios.post('https://adeluxe-backend-mitd.onrender.com/auth/register', {
       email: email.value,
       password: password.value,
       phone: phone.value,
@@ -117,7 +117,7 @@ const handleRegister = async () => {
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/src/assets/background.jpeg'); /* <-- make sure the path is correct */
+    background-image: url('/src/assets/background.jpeg'); 
 
     background-position: center;
     filter: blur(7px);
