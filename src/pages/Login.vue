@@ -47,7 +47,7 @@ const $q = useQuasar()
 const handleLogin = async () => {
   try {
     const response = 
-    await axios.post('https://adeluxe-backend-mitd.onrender.com/auth/login', {
+    await axios.post('https://backend-adeluxe.onrender.com/auth/login', {
       email: email.value,
       password: password.value
     })
