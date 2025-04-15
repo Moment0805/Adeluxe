@@ -173,7 +173,7 @@
       name: 'VLOVELAW  Spring and Autumn Sweater Hoodie Zipper Multi-Pocket Pullover',
       price: 60,
       quantity: 1,
-      image: '/src/assets/VLOVEL Spring.jpg'
+      image: '/src/assets/VLOVELAW Spring.jpg'
     },
     {
       name: 'Man Split Leather Shoe',
