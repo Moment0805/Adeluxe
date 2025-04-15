@@ -68,6 +68,7 @@
   <style scoped>
   .landing-page {
     min-height: 100vh;
+     background: linear-gradient(90deg, #39342d, #0a1531); 
   }
   
   .landing-hero-text {
