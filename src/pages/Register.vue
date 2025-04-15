@@ -78,7 +78,7 @@ const loading = ref(false)
 const handleRegister = async () => {
   loading.value = true
   try {
-     await axios.post('http://localhost:3000/auth/register', {
+     await axios.post('https://adeluxe-backend-p20x.onrender.com/auth/register', {
       email: email.value,
       password: password.value,
       phone: phone.value,
