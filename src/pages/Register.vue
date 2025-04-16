@@ -117,7 +117,7 @@ const handleRegister = async () => {
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/src/assets/background.jpeg'); 
+    background-image: url('/images/background.jpeg'); 
 
     background-position: center;
     filter: blur(7px);
