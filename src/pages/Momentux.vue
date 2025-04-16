@@ -268,21 +268,22 @@ const sendOrder = async () => {
     console.log('Order sent successfully:', res.data)
   } catch (err) {
     console.error('Failed to send order:', err)
-     $q.notify({
+    if (err){
+       $q.notify({
       type: 'negative',
-      message: 'Couldn't send Order, pls try again ',
+      message: 'Unable to send Order',
       position: 'top'
     })
-  }
-    finally{
+   }
+  } finally {
     loading.value = false
-      $q.notify({
+  }
+  $q.notify({
       type: 'positive',
       message: 'Order Sent, Checkout Now to get up to 30% Discount',
       position: 'top'
     })
     router.push('/order')
-}
 }
 
   </script>
