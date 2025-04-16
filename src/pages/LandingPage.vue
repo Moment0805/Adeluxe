@@ -4,7 +4,7 @@
       <q-page class="q-pa-md flex flex-center relative-position">
         <!-- Background image -->
         <q-img
-          src="/src/assets/shoe.jpg"
+          src="/images/shoe.jpg"
           style="height: 70vh; width: 100%; background-position: center;
           filter: blur(7px);
           z-index: -1;
