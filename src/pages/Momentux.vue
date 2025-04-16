@@ -141,7 +141,7 @@
 
   const router = useRouter()
   const $q = useQuasar()
-  const loading = ref(true)
+  const loading = ref(false)
   const products = ref([
     {
       name: 'FASHINTY Men Classical France Style Warm Wool Coat',
@@ -256,6 +256,7 @@ const addToCart = (item) => {
     })
 }
 const sendOrder = async () => {
+  loading.value = true
   try {
     const total = cart.value.reduce((acc, item) => acc + (item.price * item.quantity), 0)
 

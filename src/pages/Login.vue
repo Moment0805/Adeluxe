@@ -1,12 +1,11 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="login-wrapper flex flex-center q-pa-md">
-    <q-inner-loading :showing="loading">
-  <q-spinner color="primary" size="50px" />
-</q-inner-loading>
     <q-card class="login-card q-pa-lg">
       <div class="text-h5 text-bold q-mb-md text-center">Welcome!</div>
-
+ <q-inner-loading :showing="loading">
+  <q-spinner color="primary" size="50px" />
+</q-inner-loading>
       <q-input
         filled
         label="Email"
@@ -46,9 +45,10 @@ const router = useRouter()
 const email = ref('')
 const password = ref('')
 const $q = useQuasar()
-const loading = ref(true) // loading state
+const loading = ref(false) // loading state
 
 const handleLogin = async () => {
+  loading.value = true
   try {
     const response = 
     await axios.post('https://backend-adeluxe.onrender.com/auth/login', {
