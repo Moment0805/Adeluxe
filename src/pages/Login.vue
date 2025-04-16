@@ -76,9 +76,9 @@ const handleLogin = async () => {
         position: 'top'
       })
     }
+    }
      finally {
     loading.value = false
-  }
   }
 }
 </script>
