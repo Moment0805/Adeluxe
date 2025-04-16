@@ -7,7 +7,7 @@
         style="height: 400px; overflow: hidden;"
       >
         <q-img
-          src="/src/assets/background.jpeg"
+          src="/images/background.jpeg"
           style="height: 100%; width: 100%; object-fit: cover; background-position: center;
     filter: blur(7px);
     z-index: -1;
@@ -42,6 +42,9 @@
 
       <div v-if="cart.length" class="q-pa-md bg-grey-2 rounded-borders fixed-bottom right-0 q-mb-md z-index-10" style="width: 400px; bottom: 20px; right: 20px; z-index: 999;">
   <div class="text-subtitle1 q-mb-sm">Cart Summary:</div>
+  <q-inner-loading :showing="loading">
+  <q-spinner color="primary" size="50px" />
+</q-inner-loading>
   <ul class="q-pl-md">
     <li v-for="(item, index) in cart" :key="index" class="q-gutter-md">
       <div class="row items-center justify-between">
@@ -100,9 +103,7 @@
 
 <!-- Product Grid -->
 <div class="row q-pa-md q-col-gutter-md q-row-gutter-lg" style="z-index: 1;">
-<q-inner-loading :showing="loading">
-  <q-spinner color="primary" size="50px" />
-</q-inner-loading>
+
   <div
     v-for="(item, index) in products"
     :key="index"
@@ -269,13 +270,11 @@ const sendOrder = async () => {
     console.log('Order sent successfully:', res.data)
   } catch (err) {
     console.error('Failed to send order:', err)
-    if (err){
        $q.notify({
       type: 'negative',
       message: 'Unable to send Order',
       position: 'top'
     })
-   }
   } finally {
     loading.value = false
   }
