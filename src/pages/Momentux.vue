@@ -100,6 +100,9 @@
 
 <!-- Product Grid -->
 <div class="row q-pa-md q-col-gutter-md q-row-gutter-lg" style="z-index: 1;">
+<q-inner-loading :showing="loading">
+  <q-spinner color="primary" size="50px" />
+</q-inner-loading>
   <div
     v-for="(item, index) in products"
     :key="index"
@@ -138,78 +141,79 @@
 
   const router = useRouter()
   const $q = useQuasar()
+  const loading = ref(true)
   const products = ref([
     {
       name: 'FASHINTY Men Classical France Style Warm Wool Coat',
       price: 300,
       quantity: 1,
-      image: "/src/assets/Coat.jpg"
+      image: "/images/Coat.jpg"
     },
     {
       name: 'Nike Logo Black White Unisex Hoodie For Men',
       price: 70,
       quantity: 1,
-      image: '/src/assets/Nike Black.jpg'
+      image: '/images/Nike Black.jpg'
     },
     {
       name: "Men's Hollowed-out Waterproof Luminous Square Watch",
       price: 50,
       quantity: 1,
-      image: "/src/assets/Watch.jpg"
+      image: "/images/Watch.jpg"
     },
     {
       name: 'Men Letter Graphic Long Sleeve Casual Color Block Sweatshirt Without Necklace',
       price: 60,
       quantity: 1,
-      image: '/src/assets/Men Letter Graphic.jpg'
+      image: '/images/Men Letter Graphic.jpg'
     },
     {
       name: 'kkboxly  Stylish Collage Chest Pocket Plaid Pattern Casual Long Sleeve Button Up Shirt',
       price: 80,
       quantity: 1,
-      image: '/src/assets/kkboxly Shirt.jpg'
+      image: '/images/kkboxly Shirt.jpg'
     },
     {
       name: 'VLOVELAW  Spring and Autumn Sweater Hoodie Zipper Multi-Pocket Pullover',
       price: 60,
       quantity: 1,
-      image: '/src/assets/VLOVELAW Spring.jpg'
+      image: '/images/VLOVELAW Spring.jpg'
     },
     {
       name: 'Man Split Leather Shoe',
       price: 50,
       quantity: 1,
-      image: '/src/assets/Man Split Leather.jpg'
+      image: '/images/Man Split Leather.jpg'
     },
     {
       name: 'AIR MAX DN PLUS(SUPREME) A VISTA',
       price: 40,
       quantity: 1,
-      image: '/src/assets/AIR MAX.jpg'
+      image: '/images/AIR MAX.jpg'
     },
     {
       name: 'Sapato Social Masculino Lustro Blackstone @10',
       price: 100,
       quantity: 1,
-      image: '/src/assets/Sapato Social.jpg'
+      image: '/images/Sapato Social.jpg'
     },
     {
       name: 'Sapato Social Masculino Lustro Blackstone',
       price: 70,
       quantity: 1,
-      image: '/src/assets/Sapato Social.jpg'
+      image: '/images/Sapato Social.jpg'
     },
     {
       name: 'Winter Boot Buckle Metrosexual Shoes Korean Style',
       price: 80,
       quantity: 1,
-      image: '/src/assets/Winter.jpg'
+      image: '/images/Winter.jpg'
     },
     {
       name: 'Blue Black Custom Air Force 1',
       price: 100,
       quantity: 1,
-      image: '/src/assets/Blue Black Custom Air Force 1.jpg'
+      image: '/images/Blue Black Custom Air Force 1.jpg'
     }
   ])
 
@@ -264,13 +268,21 @@ const sendOrder = async () => {
     console.log('Order sent successfully:', res.data)
   } catch (err) {
     console.error('Failed to send order:', err)
+     $q.notify({
+      type: 'negative',
+      message: 'Couldn't send Order, pls try again ',
+      position: 'top'
+    })
   }
-  $q.notify({
+    finally{
+    loading.value = false
+      $q.notify({
       type: 'positive',
       message: 'Order Sent, Checkout Now to get up to 30% Discount',
       position: 'top'
     })
     router.push('/order')
+}
 }
 
   </script>

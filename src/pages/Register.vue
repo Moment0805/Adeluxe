@@ -1,6 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <q-page class="register-page flex flex-center">
+    <q-inner-loading :showing="loading">
+  <q-spinner color="primary" size="50px" />
+</q-inner-loading>
       <q-card class="q-pa-md shadow-10 bg-white text-dark" style="width: 400px; max-width: 90vw; border-radius: 20px;">
         <q-card-section class="text-center">
           <div class="text-h5 q-mb-xs">Create Your Account</div>
@@ -73,7 +76,7 @@ const phone = ref('')
 const name = ref('')
 const email = ref('')
 const password = ref('')
-const loading = ref(false)
+const loading = ref(true)
 
 const handleRegister = async () => {
   loading.value = true

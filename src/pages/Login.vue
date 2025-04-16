@@ -1,6 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="login-wrapper flex flex-center q-pa-md">
+    <q-inner-loading :showing="loading">
+  <q-spinner color="primary" size="50px" />
+</q-inner-loading>
     <q-card class="login-card q-pa-lg">
       <div class="text-h5 text-bold q-mb-md text-center">Welcome!</div>
 
@@ -43,6 +46,7 @@ const router = useRouter()
 const email = ref('')
 const password = ref('')
 const $q = useQuasar()
+const loading = ref(true) // loading state
 
 const handleLogin = async () => {
   try {
@@ -71,8 +75,10 @@ const handleLogin = async () => {
         message: 'An error occurred. Please try again later.',
         position: 'top'
       })
-
     }
+     finally {
+    loading.value = false
+  }
   }
 }
 </script>
