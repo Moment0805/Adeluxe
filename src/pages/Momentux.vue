@@ -188,7 +188,7 @@
       image: '/src/assets/AIR MAX.jpg'
     },
     {
-      name: 'Sapato Social Masculino Lustro Blackstone',
+      name: 'Sapato Social Masculino Lustro Blackstone @10',
       price: 100,
       quantity: 1,
       image: '/src/assets/Sapato Social.jpg'

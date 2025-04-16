@@ -34,7 +34,7 @@ export class UsersController {
 
   @UseGuards(JwtAuthGuard)
   @Patch('me') // Update the logged-in user's profile
-  updateProfile(@Request() req: RequestWithUser, @Body() body: { email?: string; password?: string }) {
+  updateProfile(@Request() req: RequestWithUser, @Body() body: { email?: string; password?: string, phone?: string }) {
     return this.usersService.update(req.user.id, body); // Pass userId from the token
   }
 
