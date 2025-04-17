@@ -87,6 +87,11 @@
   <script setup>
   import { ref, onMounted, computed } from 'vue'
   import { api } from 'boot/axios'
+  import { useRouter } from 'vue-router'
+  import { useQuasar } from 'quasar'
+
+const router = useRouter()
+const $q = useQuasar()
   
   const cart = ref([])
   const promoCode = ref('')
