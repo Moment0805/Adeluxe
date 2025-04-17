@@ -30,7 +30,14 @@
         @click= handleLogin
         style="background: linear-gradient(90deg, #ff8a00, #e52e71); color: white;"
       />
-       <q-btn flat label="Don't have an account yet? Sign up" @click="$router.push('/register')" class="text-center q-mt-sm q-pa-md" style="font-size: 7px"/>
+      <div
+  class="text-primary text-weight-medium text-center cursor-pointer q-mt-md"
+  style="font-size: 8px"
+  @click="$router.push('/register')"
+>
+  Don't have an account yet? Sign up
+</div>
+
     </q-card>
   </div>
 </template>
