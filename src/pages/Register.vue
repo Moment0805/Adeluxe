@@ -29,16 +29,15 @@
               required
             />
             <q-input
-    v-model="password"
-    :type="isPwd ? 'password' : 'text'"
-    label="Password"
-    outlined
-    dense
-    rounded
-    required
-    :append-icon="isPwd ? 'visibility_off' : 'visibility'"
-    @click:append="isPwd = !isPwd"
-  />
+  v-model="password"
+  type="password"
+  label="Password"
+  outlined
+  dense
+  rounded
+  append-icon="visibility"
+/>
+
             <q-input
               v-model="phone"
               label="Mobile Number"
@@ -78,7 +77,6 @@ const phone = ref('')
 const name = ref('')
 const email = ref('')
 const password = ref('')
-const isPwd = ref(true)
 const loading = ref(false)
 
 const handleRegister = async () => {
