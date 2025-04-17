@@ -16,7 +16,7 @@
         
         </q-toolbar-title>
 
-        <div style="font-size: 6px">@moment</div>
+        <div style="font-size: 7px">@Moment</div>
       </q-toolbar>
     </q-header>
 

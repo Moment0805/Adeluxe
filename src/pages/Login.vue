@@ -14,12 +14,9 @@
         class="q-mb-md"
       />
        <q-input
-    v-model="password"
     :type="isPwd ? 'password' : 'text'"
     label="Password"
-    outlined
-    dense
-    rounded
+    filled
     required
     :append-icon="isPwd ? 'visibility_off' : 'visibility'"
     @click:append="isPwd = !isPwd"
