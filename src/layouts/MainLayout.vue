@@ -16,7 +16,7 @@
         
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div style="font-size: 6px">@moment</div>
       </q-toolbar>
     </q-header>
 
@@ -73,11 +73,11 @@ const linksList = [
     title: 'Help',
     caption: 'Chat with us',
     icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    link: '"https://wa.me/2349131249936?text=Hello%20I%20have%20a%20question%20about%20my%20order'
   },
   {
     title: 'Logout',
-    caption: 'Chana',
+    caption: 'Ja n ne',
     icon: 'logout',
     link: '/#/login',
     onClick: () => {
