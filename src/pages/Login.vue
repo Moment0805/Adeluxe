@@ -32,7 +32,7 @@
       />
       <div
   class="text-primary text-weight-medium text-center cursor-pointer q-mt-md"
-  style="font-size: 8px"
+  style="font-size: 14px"
   @click="$router.push('/register')"
 >
   Don't have an account yet? Sign up
