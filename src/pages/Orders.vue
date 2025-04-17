@@ -149,6 +149,12 @@ const removeItem = (item) => {
     } catch (err) {
       console.error('Failed to send order:', err)
     }
+     $q.notify({
+      type: 'positive',
+      message: 'Your Order is being processed, Thanks for shopping with us',
+      position: 'top'
+    })
+    router.push('/welcome')
   }
   
   onMounted(fetchOrders)

@@ -40,8 +40,12 @@
 </div>
 
 
-      <div v-if="cart.length" class="q-pa-md bg-grey-2 rounded-borders fixed-bottom right-0 q-mb-md z-index-10" style="width: 400px; bottom: 20px; right: 20px; z-index: 999;">
-  <div class="text-subtitle1 q-mb-sm">Cart Summary:</div>
+     <div
+  v-if="cart.length"
+  class="q-pa-md bg-grey-2 rounded-borders fixed-bottom right-0 q-mb-md z-index-10 shadow-4 scroll"
+  style="width: 400px; bottom: 20px; right: 20px; z-index: 999; max-height: 300px; overflow-y: auto;"
+    >
+ <div class="text-subtitle1 q-mb-sm">Cart Summary:</div>
   <q-inner-loading :showing="loading">
   <q-spinner color="primary" size="50px" />
 </q-inner-loading>
@@ -178,7 +182,7 @@
       name: 'VLOVELAW  Spring and Autumn Sweater Hoodie Zipper Multi-Pocket Pullover',
       price: 60,
       quantity: 1,
-      image: '/images/VLOVELAW Spring.jpg'
+      image: '/images/VLOVELAW  Spring.jpg'
     },
     {
       name: 'Man Split Leather Shoe',
@@ -205,6 +209,12 @@
       image: '/images/Sapato Social.jpg'
     },
     {
+      name: 'Jonas _ Warm gefütterte Hausschuhe',
+      price: 30,
+      quantity: 1,
+      image: '/images/Jonas _ Warm gefütterte Hausschuhe - Blau _ 42.jpg'
+    },
+    {
       name: 'Winter Boot Buckle Metrosexual Shoes Korean Style',
       price: 80,
       quantity: 1,
@@ -215,6 +225,12 @@
       price: 100,
       quantity: 1,
       image: '/images/Blue Black Custom Air Force 1.jpg'
+    },
+    {
+      name: 'Navy Blue Custom Air Jordan 1',
+      price: 120,
+      quantity: 1,
+      image: '/images/Navy Blue Custom Air Jordan 1.jpg'
     }
   ])
 

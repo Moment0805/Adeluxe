@@ -13,14 +13,18 @@
         type="email"
         class="q-mb-md"
       />
-
-      <q-input
-        filled
-        label="Password"
-        v-model="password"
-        type="password"
-        class="q-mb-md"
-      />
+       <q-input
+    v-model="password"
+    :type="isPwd ? 'password' : 'text'"
+    label="Password"
+    outlined
+    dense
+    rounded
+    required
+    :append-icon="isPwd ? 'visibility_off' : 'visibility'"
+    @click:append="isPwd = !isPwd"
+    class="q-mb-md"
+  />
 
       <q-btn
         class="q-mt-md full-width"
@@ -31,6 +35,7 @@
         @click= handleLogin
         style="background: linear-gradient(90deg, #ff8a00, #e52e71); color: white;"
       />
+       <q-btn flat label="Don't have an account yet? Sign up" @click="$router.push('/register')"/>
     </q-card>
   </div>
 </template>
@@ -44,6 +49,7 @@ import { useQuasar } from 'quasar'
 const router = useRouter()
 const email = ref('')
 const password = ref('')
+const isPwd = ref(true)
 const $q = useQuasar()
 const loading = ref(false) // loading state
 
