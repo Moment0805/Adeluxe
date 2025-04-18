@@ -294,7 +294,6 @@ const sendOrder = async () => {
       message: 'Order Sent, Checkout Now to get up to 30% Discount',
       position: 'top'
     })
-    router.push('/order')
 }
 
   </script>
