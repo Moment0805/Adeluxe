@@ -33,7 +33,7 @@
       </template>
 
       <div class="q-mt-lg">
-        <q-btn flat label="← Back to Home" @click="$router.push('/welcome')" />
+        <q-btn flat label="← Back to Home" @click="backHome" />
       </div>
     </div>
   </div>
@@ -75,6 +75,10 @@ const columns = [
   { name: 'price', label: 'Price', field: row => `£${row.price}`, sortable: true },
   { name: 'total', label: 'Total', field: row => `£${(row.price * row.quantity).toFixed(2)}` }
 ]
+
+const backHome = ()=> {
+  router.push('/welcome')
+}
 
 onMounted(fetchOrders)
 </script>
