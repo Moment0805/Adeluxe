@@ -142,9 +142,7 @@
   import { ref } from 'vue'
   import { api } from 'src/boot/axios'
   import { useQuasar } from 'quasar'
-  import { useRouter } from 'vue-router'
 
-  const router = useRouter()
   const $q = useQuasar()
   const loading = ref(false)
   const products = ref([
