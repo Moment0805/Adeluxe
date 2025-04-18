@@ -43,7 +43,7 @@
       <!-- Order Summary -->
       <div class="col-12 col-md-4">
         <div class="q-pa-md bg-grey-2 rounded-borders">
-          <div class="text-h6 q-mb-md">Order Summary</div>
+          <div class="text-h6 q-mb-md">Buy again, redeem Orders to get 30% discount</div>
   
           <div class="q-mb-sm row justify-between">
             <span>Items</span>
@@ -143,9 +143,11 @@ const removeItem = (item) => {
     { name: 'total', label: 'Total', field: row => `£${(row.price * row.quantity).toFixed(2)}` }
   ]
 
- const handleCheckout = () => {
-  cart.value = [] // clear the cart items from the page
-
+const handleCheckout = async () => {
+  try {
+    const res = await api.post('/orders', payload)
+    console.log('Order sent successfully:', res.data)
+  } 
   $q.notify({
     type: 'positive',
     message: 'Checkout complete! Thank you for your purchase.',
