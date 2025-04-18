@@ -75,7 +75,7 @@
   :disable="cart.length === 0"
   color="primary"
   label="Checkout"
-  @click="sendOrders"
+  @click="handleCheckout"
   class="q-mt-lg full-width"
 />
 
@@ -143,24 +143,18 @@ const removeItem = (item) => {
     { name: 'total', label: 'Total', field: row => `£${(row.price * row.quantity).toFixed(2)}` }
   ]
 
-  const sendOrders = async () => {
-    try {
-      const payload = {
-        items: cart.value,
-        total: totalCost.value
-      }
-      await api.post('/orders', payload)
-      console.log('Order sent successfully:', payload)
-    } catch (err) {
-      console.error('Failed to send order:', err)
-    }
-     $q.notify({
-      type: 'positive',
-      message: 'Your Order is being processed, Thanks for shopping with us',
-      position: 'top'
-    })
-    router.push('/welcome')
-  }
+ const handleCheckout = () => {
+  cart.value = [] // clear the cart items from the page
+
+  $q.notify({
+    type: 'positive',
+    message: 'Checkout complete! Thank you for your purchase.',
+    position: 'top'
+  })
+
+  router.push('/welcome') // redirect to welcome page
+}
+
   
   onMounted(fetchOrders)
   </script>
