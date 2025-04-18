@@ -286,11 +286,6 @@ const sendOrder = async () => {
     console.log('Order sent successfully:', res.data)
   } catch (err) {
     console.error('Failed to send order:', err)
-       $q.notify({
-      type: 'negative',
-      message: 'Unable to send Order',
-      position: 'top'
-    })
   } finally {
     loading.value = false
   }

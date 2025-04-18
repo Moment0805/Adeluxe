@@ -7,7 +7,6 @@
         <div v-if="user">
           <p>Email: {{ user.email }}</p>
           <p>Phone number: {{ user.phone}}</p>
-          <p>Created at: {{ user.createdAt }}</p>
         </div>
         <q-btn label="Refresh" @click="getUser" color="primary"/>
       </q-card-section>
